@@ -1,0 +1,23 @@
+Determining if the include file pthread.h exists failed with the following output:
+Change Dir: /home/worker/tsu26my_workspace/HONDA_TSU_26MY_250709/build_tsu/nad/LGE/tsu-src/apps/oemcallapp/uts/unittests/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_a5b37/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a5b37.dir/build.make CMakeFiles/cmTC_a5b37.dir/build
+make[1]: Entering directory '/home/worker/tsu26my_workspace/HONDA_TSU_26MY_250709/build_tsu/nad/LGE/tsu-src/apps/oemcallapp/uts/unittests/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a5b37.dir/CheckIncludeFile.c.o
+/usr/bin/cc --sysroot=/home/worker/tsu26my_workspace/HONDA_TSU_26MY_250709/build_tsu/nad/sa515m/SA515M_apps/apps_proc/build/tmp-glibc/work/armv7at2hf-neon-oe-linux-gnueabi/oemcallapp/0.0-r0/recipe-sysroot    -o CMakeFiles/cmTC_a5b37.dir/CheckIncludeFile.c.o   -c /home/worker/tsu26my_workspace/HONDA_TSU_26MY_250709/build_tsu/nad/LGE/tsu-src/apps/oemcallapp/uts/unittests/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+In file included from /home/worker/tsu26my_workspace/HONDA_TSU_26MY_250709/build_tsu/nad/sa515m/SA515M_apps/apps_proc/build/tmp-glibc/work/armv7at2hf-neon-oe-linux-gnueabi/oemcallapp/0.0-r0/recipe-sysroot/usr/include/gnu/stubs.h:40:0,
+                 from /home/worker/tsu26my_workspace/HONDA_TSU_26MY_250709/build_tsu/nad/sa515m/SA515M_apps/apps_proc/build/tmp-glibc/work/armv7at2hf-neon-oe-linux-gnueabi/oemcallapp/0.0-r0/recipe-sysroot/usr/include/features.h:512,
+                 from /home/worker/tsu26my_workspace/HONDA_TSU_26MY_250709/build_tsu/nad/sa515m/SA515M_apps/apps_proc/build/tmp-glibc/work/armv7at2hf-neon-oe-linux-gnueabi/oemcallapp/0.0-r0/recipe-sysroot/usr/include/pthread.h:21,
+                 from /home/worker/tsu26my_workspace/HONDA_TSU_26MY_250709/build_tsu/nad/LGE/tsu-src/apps/oemcallapp/uts/unittests/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:
+/home/worker/tsu26my_workspace/HONDA_TSU_26MY_250709/build_tsu/nad/sa515m/SA515M_apps/apps_proc/build/tmp-glibc/work/armv7at2hf-neon-oe-linux-gnueabi/oemcallapp/0.0-r0/recipe-sysroot/usr/include/gnu/stubs-32.h:7:11: fatal error: gnu/stubs-soft.h: No such file or directory
+ # include <gnu/stubs-soft.h>
+           ^~~~~~~~~~~~~~~~~~
+compilation terminated.
+CMakeFiles/cmTC_a5b37.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_a5b37.dir/CheckIncludeFile.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_a5b37.dir/CheckIncludeFile.c.o] Error 1
+make[1]: Leaving directory '/home/worker/tsu26my_workspace/HONDA_TSU_26MY_250709/build_tsu/nad/LGE/tsu-src/apps/oemcallapp/uts/unittests/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_a5b37/fast' failed
+make: *** [cmTC_a5b37/fast] Error 2
+
+

@@ -1,0 +1,85 @@
+@startuml
+
+skinparam titleFontSize 20
+skinparam padding 4
+
+title ECallApp2 & OEMCallApp 구조도 (Class Diagram)
+
+skinparam backgroundColor #FFFFFF
+skinparam classBackgroundColor #FDFDFD
+
+' ECallApp2 영역 (연한 파란색 배경)
+rectangle "ECallApp2 영역" #E3F2FD {
+    interface IECallAppIf {
+    	+ doECallhandler)
+	}
+    class ECallApp2 {
+        + doECallhandler()
+		- mParrent : OEMCallAppIF
+	}
+    class ECallAppHandler
+    class SLLooper
+    class ProcessorManager
+
+    class NAECallProcessor
+    class NADESSCall
+    class CPDSmartPhoneProcessor
+
+    class processorHandleMessage_NAECall
+    class processorHandleMessage_NADESS
+    class processorHandleMessage_CPD
+    class NAECallStateMachine
+
+    IECallAppIf <|.. ECallApp2
+
+    ECallApp2 *-- ECallAppHandler
+    ECallApp2 *-- SLLooper
+    ECallApp2 *-- ProcessorManager
+
+    ProcessorManager *-- NAECallProcessor
+    ProcessorManager *-- NADESSCall
+    ProcessorManager *-- CPDSmartPhoneProcessor
+
+    NAECallProcessor *-- processorHandleMessage_NAECall
+    NADESSCall *-- processorHandleMessage_NADESS
+    CPDSmartPhoneProcessor *-- processorHandleMessage_CPD
+
+    NAECallProcessor *-- NAECallStateMachine
+}
+
+' OEMCallApp 영역 (연한 노란색 배경)
+rectangle "OEMCallApp 영역" #FFF9C4 {
+ 	' 인터페이스 정의
+	interface OEMCallAppIF {
+    	+ doOemCallHandler()
+    	+ isProcessorNullPtr(): bool
+	}
+    class OEMCallApp {
+        + doOemCallHandler()
+    }
+    class OEMCallHandler
+    class SLLooper
+    class ProcessorManager
+
+    class ACNPhoneProcessor
+    class RCallProcessor
+
+    class doProcessorHandler_ACN
+    class doProcessorHandler_RCall
+
+    OEMCallApp ..|> OEMCallAppIF
+    OEMCallApp *-- OEMCallHandler
+    OEMCallApp *-- SLLooper
+    OEMCallApp *-- ProcessorManager
+
+    ProcessorManager *-- ACNPhoneProcessor
+    ProcessorManager *-- RCallProcessor
+
+    ACNPhoneProcessor *-- doProcessorHandler_ACN
+    RCallProcessor *-- doProcessorHandler_RCall
+}
+
+' 사용 관계 - mParrent
+ECallAppHandler -->  OEMCallAppIF : mParrent->doOemCallHandler(...)
+@enduml
+ 

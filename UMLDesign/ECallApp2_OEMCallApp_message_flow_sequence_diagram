@@ -1,0 +1,71 @@
+@startuml
+
+skinparam titleFontSize 20
+skinparam padding 4
+
+title ECallApp2 & OEMCallApp Signal Message Flow (Sequence Diagram)
+
+' CommunicationManagerAdapter 영역 (연한 회색)
+box "Adapter 영역" #ECEFF1
+participant CommunicationManagerAdapter
+end box
+
+' ECallApp2 영역 (연한 파란색)
+box "ECallApp2 영역" #E3F2FD
+participant ECallAppHandler
+participant ECallApp2.SLLooper as SLLooper
+participant ECallApp2 <<ACTIVE>>
+participant ECallApp2.ProcessorManager
+participant NAECallProcessor
+participant NADESSCall
+participant CPDSmartPhoneProcessor
+participant NAECallStateMachine
+end box
+
+' OEMCallApp 영역 (연한 노란색)
+box "OEMCallApp 영역" #FFF9C4
+participant OEMCallApp
+participant OEMCallApp.ProcessorManager
+participant ACNPhoneProcessor
+participant RCallProcessor
+end box
+
+' 1. Signal 수신 및 메시지 전달
+CommunicationManagerAdapter -> ECallAppHandler : ECallAppHandler.sendMessage(message)
+
+' 2. 메시지 큐 등록
+ECallAppHandler -> SLLooper : enqueueMessage(message)
+
+' 3. Looper에 의해 메시지 처리 시작
+SLLooper -> ECallApp2 : doECallhandler(what, message)
+
+' 4. ECallApp2 내부에서 ProcessorManager로 메시지 전달
+ECallApp2 -> ECallApp2.ProcessorManager : mProcessorsMgr->handleMessage(what, message)
+
+activate ECallApp2
+
+' 5. ProcessorManager가 각 Processor에 메시지 전달 (일부 Processor는 상태머신으로 메시지 전달)
+ECallApp2.ProcessorManager -> NAECallProcessor : processor->processorHandleMessage(what, message)
+activate ECallApp2.ProcessorManager
+NAECallProcessor -> NAECallStateMachine : mStateMachine->handleMessage(what, message)
+
+ECallApp2.ProcessorManager -> NADESSCall : processor->processorHandleMessage(what, message)
+ECallApp2.ProcessorManager -> CPDSmartPhoneProcessor : processorHandleMessage(what, message)
+deactivate ECallApp2.ProcessorManager
+
+' 6. 조건 분기 후 OEMCallAppIF의 doOemCallHandler로 메세지 직접 전달
+ECallApp2 -> OEMCallApp : mParrent->doOemCallHandler(message)
+
+deactivate ECallApp2
+
+' 8. OEMCallApp의 ProcessorManager로 메시지 전달
+OEMCallApp -> OEMCallApp.ProcessorManager : upProcessorManager_->handleMessage(what, msg)
+
+' 10. ProcessorManager가 각 Processor에 메시지 전달 
+OEMCallApp.ProcessorManager -> ACNPhoneProcessor : doProcessorHandler(what, msg)
+activate OEMCallApp.ProcessorManager
+
+OEMCallApp.ProcessorManager -> RCallProcessor : doProcessorHandler(what, msg)
+deactivate OEMCallApp.ProcessorManager
+
+@enduml

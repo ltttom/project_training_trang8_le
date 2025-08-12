@@ -1,0 +1,12 @@
+prop.status = 1
+Cordinate.Latitude =
+Cordinate.Longitude =
+Velocity.Value =
+Velocity.Pdop =
+Velocity.Hdop =
+Velocity.CourseHeading =
+FrontalCrashSensor =
+SideCrashSensorL =
+SideCrashSensorR =
+SideCrashSensor =
+RearEndCrashSensor =

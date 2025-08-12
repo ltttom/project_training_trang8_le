@@ -1,0 +1,165 @@
+{
+    "tool-chain": {
+        "path": "/usr/bin/",
+        "cxx_compiler": "g++",
+        "c_compiler": "gcc"
+    },
+    "objects": {
+        "files": [
+            {   "file": "../src/receiver/someip_manager.cpp"         },
+            {   "file": "../src/receiver/receiver_manager.cpp"         },
+            {   "file": "../src/logger.cpp"         },
+            {   "file": "../src/utils/utils_common.cpp"         },
+            {   "file": "../src/data/data_collector_can.cpp"         },
+            {   "file": "../src/data/data_collector_gps.cpp"         },
+            {   "file": "../src/data/data_builder_us.cpp"         },
+            {   "file": "../src/data/data_builder_rcall.cpp"         },
+            {   "file": "../src/oem_call_handler.cpp"         },
+            {   "file": "../src/oem_call_app.cpp"         },
+            {   "file": "../src/oem_call_timer.cpp"         },
+            {   "file": "../src/processor/acn_phone_processor.cpp"         },
+            {   "file": "../src/processor/processor_manager.cpp"         },
+            {   "file": "../src/processor/r_call_jp_processor.cpp"         }
+        ]
+    },
+    "cxxflags": {
+        "link_directories": {
+            "paths": []
+        },
+        "include_paths": {
+            "paths": [
+                {
+                    "path": "../"
+                },
+                {
+                    "path": "../src/"
+                },
+                {
+                    "path": "../src/data/"
+                },
+                {
+                    "path": "../src/processor/"
+                },
+                {
+                    "path": "../src/receiver/"
+                },
+                {
+                    "path": "../src/services_adapter/"
+                },
+                {
+                    "path": "../src/utils/"
+                }
+            ]
+        },
+        "defines": [
+            {
+                "define": "PIC"
+            }, 
+            {
+                "define": "HAVE_CONFIG_H"
+            }, 
+            {
+                "define": "HAVE_SYS_UIO_H"
+            }, 
+            {
+                "define": "_MORE_MARSHM"
+            }, 
+            {
+                "define": "_FORTIFY_SOURCE=2"
+            }, 
+            {
+                "define": "TARGET_ION_ABI_VERSION=2"
+            }
+        ],
+        "extra_flags": [
+            {
+                "flag": "--sysroot=../recipe-sysroot"
+            }, 
+            {
+                "flag": "-fpermissive"
+            }, 
+            {
+                "flag": "-Wl,.libs/liboemcall.exp"
+            }, 
+            {
+                "flag": "-shared"
+            }, 
+            {
+                "flag": "-O0"
+            }, 
+            {
+                "flag": "-Wl,-soname"
+            }, 
+            {
+                "flag": "-rdynamic"
+            }, 
+            {
+                "flag": "-Wl,-z"
+            }, 
+            {
+                "flag": "-Wall"
+            }, 
+            {
+                "flag": "-Wformat-security"
+            }, 
+            {
+                "flag": "-Wl,-retain-symbols-file"
+            }, 
+            {
+                "flag": "-pie"
+            }, 
+            {
+                "flag": "-Wl,--as-needed"
+            }, 
+            {
+                "flag": "-Werror=overflow"
+            }, 
+            {
+                "flag": "-Werror=sequence-point"
+            }, 
+            {
+                "flag": "-Wl,noexecstack"
+            }, 
+            {
+                "flag": "-Wl,liboemcall.so.0"
+            }, 
+            {
+                "flag": "-Wa,--noexecstack"
+            }, 
+            {
+                "flag": "-mfloat-abi=hard"
+            }, 
+            {
+                "flag": "-Wl,relro"
+            }, 
+            {
+                "flag": "-std=c++14"
+            }, 
+            {
+                "flag": "-Werror=array-bounds"
+            }, 
+            {
+                "flag": "-mthumb"
+            }, 
+            {
+                "flag": "-march=armv7-a"
+            }, 
+            {
+                "flag": "-Wl,-z,relro,-z,now,-z,noexecstack"
+            }, 
+            {
+                "flag": "-nostdlib"
+            }, 
+            {
+                "flag": "-mfpu=neon"
+            }, 
+            {
+                "flag": "-fvisibility-inlines-hidden"
+            }, 
+            {
+                "flag": "-Wl,--hash-style=gnu"
+            }
+        ],
+        "libraries": []
+    }
+}

@@ -1,0 +1,136 @@
+{
+    "name": "oemcall",
+    "version": "0.0.1",
+    "type": "app",
+    "desc": "oemcallapp",
+    "license": "LGE",
+    "author": "tridung.nguyen@lge.com",
+    "launchOnBoot": true,
+    "launchOnProvisioned": false,
+    "launchPriority": 1,
+    "uid": 7100,
+    "gid": 7100,
+    "permanent": false,
+    "activeOnBoot": false,
+    "triggers": {
+        "actives": [
+            "EVENT_1",
+            "EVENT_2"
+        ],
+        "inactives": [
+            "EVENT_3",
+            "EVENT_4"
+        ]
+    },
+    "features": [
+        {
+            "name": "ecall-us",
+            "regions": [],
+            "statusOnBoot": false,
+            "ignore": ["acn-us", "acn-us-incomming", "ecall-us-incomming", "ecall-us", "dess-us-incomming", "dess-us"],
+            "update": ["ecall-us-cbwt", "acn-us-cbwt", "provisioning", "comm-check", "certification-update", "privacy-setting", "RESC", "SVT", "SeA","poi", "wpd","wipe-tcu","RSI", "OTA_Download_and_Installation", "DAQ", "WifiSetting", "WifiHotspot", "digital-key", "DATAP", "function-check", "hsf", "vehicle-locator", "wipe-tcu"],
+            "postpone": [],
+            "trigger": []
+        },
+		{
+            "name": "ecall-us-incomming",
+            "regions": [],
+            "statusOnBoot": false,
+            "ignore": ["acn-us", "acn-us-incomming", "ecall-us-incomming", "ecall-us", "dess-us-incomming", "dess-us"],
+            "update": ["provisioning", "comm-check", "certification-update", "privacy-setting", "RDL", "RDU", "RES", "RESC", "SVT", "SeA", "poi", "wpd", "wipe-tcu", "RSI", "OTA_Download_and_Installation", "DAQ", "WifiSetting", "WifiHotspot", "digital-key", "DATAP", "function-check", "hsf", "vehicle-locator", "wipe-tcu"],
+            "postpone": [],
+            "trigger": []
+        },
+		{
+            "name": "ecall-us-cbwt",
+            "regions": [],
+            "statusOnBoot": false,
+            "ignore": [],
+            "update": [],
+            "postpone": [],
+            "trigger": []
+        },
+        {
+            "name": "acn-us",
+            "regions": [],
+            "statusOnBoot": false,
+            "ignore": ["acn-us", "acn-us-incomming", "ecall-us-incomming", "ecall-us", "dess-us-incomming", "dess-us"],
+            "update": ["ecall-us-cbwt", "acn-us-cbwt", "provisioning", "comm-check", "certification-update", "privacy-setting", "RESC", "SVT", "SeA","poi", "wpd", "wipe-tcu","RSI", "OTA_Download_and_Installation", "DAQ", "WifiSetting", "WifiHotspot", "digital-key", "DATAP", "function-check", "hsf", "vehicle-locator", "wipe-tcu"],
+            "postpone": [],
+            "trigger": []
+        },
+		{
+            "name": "acn-us-incomming",
+            "regions": [],
+            "statusOnBoot": false,
+            "ignore": ["acn-us", "acn-us-incomming", "ecall-us-incomming", "ecall-us"],
+            "update": ["provisioning", "comm-check", "certification-update", "privacy-setting", "RDL", "RDU", "RES", "RESC", "SVT", "SeA", "poi", "wpd", "wipe-tcu", "RSI", "OTA_Download_and_Installation", "DAQ", "WifiSetting", "WifiHotspot", "digital-key", "DATAP", "function-check", "hsf", "vehicle-locator", "wipe-tcu"],
+            "postpone": [],
+            "trigger": []
+        },
+		{
+            "name": "acn-us-cbwt",
+            "regions": [],
+            "statusOnBoot": false,
+            "ignore": [],
+            "update": [],
+            "postpone": [],
+            "trigger": []
+        },
+        {
+            "name": "dess-us",
+            "regions": [],
+            "statusOnBoot": false,
+            "ignore": ["acn-us", "acn-us-incomming", "ecall-us-incomming", "ecall-us", "dess-us-incomming", "dess-us"],
+            "update": ["ecall-us-cbwt", "acn-us-cbwt", "provisioning", "comm-check", "certification-update", "privacy-setting", "RESC", "SVT", "SeA","poi", "wpd", "wipe-tcu","RSI", "OTA_Download_and_Installation", "DAQ", "WifiSetting", "WifiHotspot", "digital-key", "DATAP", "function-check", "hsf", "vehicle-locator", "wipe-tcu"],
+            "postpone": [],
+            "trigger": []
+        },
+		{
+            "name": "dess-us-incomming",
+            "regions": [],
+            "statusOnBoot": false,
+            "ignore": ["acn-us", "acn-us-incomming", "ecall-us-incomming", "ecall-us", "dess-us-incomming", "dess-us"],
+            "update": ["provisioning", "comm-check", "certification-update", "privacy-setting", "RDL", "RDU", "RES", "RESC", "SVT", "SeA", "poi", "wpd", "wipe-tcu", "RSI", "OTA_Download_and_Installation", "DAQ", "WifiSetting", "WifiHotspot", "digital-key", "DATAP", "function-check", "hsf", "vehicle-locator", "wipe-tcu"],
+            "postpone": [],
+            "trigger": []
+        },
+		{
+            "name": "dess-us-cbwt",
+            "regions": [],
+            "statusOnBoot": false,
+            "ignore": [],
+            "update": [],
+            "postpone": [],
+            "trigger": []
+        },
+        {
+            "name": "acn-phone",
+            "regions": [],
+            "statusOnBoot": false,
+            "ignore": ["acn-phone"],
+            "update": [],
+            "postpone": [],
+            "trigger": []
+        },
+        {
+            "name": "rcall-japan",
+            "regions": [],
+            "statusOnBoot": false,
+            "ignore": ["ecall_kj", "acn_kj", "ecall_incoming_standby_kj", "acn_incoming_standby_kj", "ecall_incoming_call_kj", "acn_incoming_call_kj",
+                       "dess_kj", "dess_incoming_call_kj", "dess_incoming_standby_kj"],
+            "update": ["testcall_kj"],
+            "postpone": [],
+            "trigger": []
+        },
+        {
+            "name": "cpd_smartphone",
+            "regions": [],
+            "statusOnBoot": false,
+            "ignore":["cpd_smartphone", "OTA_activation"],
+			"update": ["RSI", "wipe-tcu"],
+            "postpone": [],
+            "trigger": []
+        }
+    ]
+}
